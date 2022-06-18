@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./App.css";
 import AddToList from "./components/AddToList";
 import List from "./components/List";
+import styled from "styled-components";
 
 export interface IState {
   employees: {
-   
     url: string;
     name: string;
     age: number;
@@ -26,12 +26,16 @@ function App() {
   ]);
 
   return (
-    <div className="App">
+    <StyledApp>
       <h1>Employee List</h1>
       <List employees={employees} />
       <AddToList employees={employees} setEmployees={setEmployees} />
-    </div>
+    </StyledApp>
   );
 }
+
+const StyledApp = styled.div`
+  text-align: center;
+`;
 
 export default App;
