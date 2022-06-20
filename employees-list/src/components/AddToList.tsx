@@ -1,7 +1,8 @@
 import { FC, useState } from "react";
 import styled from "styled-components";
 
-import { IState as Props } from "../App";
+import {IState as Props} from '../types';
+
 
 interface IProps {
   employees: Props["employees"];

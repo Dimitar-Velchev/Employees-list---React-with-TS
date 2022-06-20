@@ -1,40 +1,19 @@
 import React, { useState } from "react";
 import "./App.css";
-import AddToList from "./components/AddToList";
-import List from "./components/List";
+
 import Navigation from "./components/Navigation";
+import Router from "../src/routes"
 import styled from "styled-components";
 
 
 
-export interface IState {
-  employees: {
-    url: string;
-    name: string;
-    age: number;
-    available: boolean;
-    note?: string;
-  }[];
-}
-
 function App() {
-  const [employees, setEmployees] = useState<IState["employees"]>([
-    {
-      url: "https://pngimg.com/uploads/face/face_PNG5645.png",
-      name: "Dimitar Velchev",
-      age: 32,
-      available: true,
-      note: "junior",
-    },
-  ]);
 
   return (
     
     <StyledApp>
       <Navigation />
-      <h1>Employee List</h1>
-      <List employees={employees} />
-      <AddToList employees={employees} setEmployees={setEmployees} />
+      <Router />
     </StyledApp>
   );
 }

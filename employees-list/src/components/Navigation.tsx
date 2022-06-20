@@ -9,20 +9,20 @@ const Navigation: FC = () => {
   return (
     <Header bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <Image src={logo} height={45} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#home">List</Nav.Link>
             <Nav.Link href="#link">Link</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Hamburger className="d-block">
-          <BsList size={25} />
-        </Hamburger>
       </Container>
+      <Hamburger className="d-block">
+        <BsList size={25} />
+      </Hamburger>
     </Header>
   );
 };

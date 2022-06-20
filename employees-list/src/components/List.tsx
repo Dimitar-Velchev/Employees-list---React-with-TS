@@ -1,18 +1,28 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { IState as IProps } from "../App";
+import {IState} from '../types';
+import {MdDeleteForever} from "react-icons/md"
 
-const List: FC<IProps> = ({ employees }) => {
+interface IProps extends IState  {
+  onDelete: (data:string) => void;
+}
+
+
+const List: FC<IProps> = ({ employees,onDelete }) => {
+
+
+
   const renderList = (): JSX.Element[] => {
-    return employees.map((e) => {
+    return employees.map((emp) => {
       return (
-        <StyledList key={e.name}>
+        <StyledList key={emp.name}>
           <StyledListHeader>
-            <StyledListImg src={e.url} alt={e.name} className="list-img" />
-            <h2>{e.name}</h2>
+            <StyledListImg src={emp.url} alt={emp.name} className="list-img" />
+            <h2>{emp.name}</h2>
           </StyledListHeader>
-          <p>{e.age} years old</p>
-          <StyledListNote>{e.note}</StyledListNote>
+          <p>{emp.age} years old</p>
+          <StyledListNote>{emp.note}</StyledListNote>
+          <button onClick={()=>onDelete(emp.name)}><MdDeleteForever size={25}/></button>
         </StyledList>
       );
     });
