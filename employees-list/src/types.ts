@@ -9,3 +9,20 @@ export interface IState {
     }[];
   }
   
+  export interface IPopular {
+    popular: {
+      id: number;
+      title: string;
+      image: string;
+      imageType: string;
+    }[];
+  }
+
+  export interface IRecipe {
+    recipe:{
+      id: number;
+      title: string;
+      image: string;
+      imageType: string;
+    }
+  }

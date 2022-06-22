@@ -4,13 +4,11 @@ import {IState} from '../types';
 import {MdDeleteForever} from "react-icons/md"
 
 interface IProps extends IState  {
-  onDelete: (data:string) => void;
+  onDelete: (name: string) => void;
 }
 
 
 const List: FC<IProps> = ({ employees,onDelete }) => {
-
-
 
   const renderList = (): JSX.Element[] => {
     return employees.map((emp) => {
@@ -22,7 +20,7 @@ const List: FC<IProps> = ({ employees,onDelete }) => {
           </StyledListHeader>
           <p>{emp.age} years old</p>
           <StyledListNote>{emp.note}</StyledListNote>
-          <button onClick={()=>onDelete(emp.name)}><MdDeleteForever size={25}/></button>
+          <StyledButton onClick={()=>onDelete(emp.name)}><MdDeleteForever size={25}/></StyledButton>
         </StyledList>
       );
     });
@@ -36,7 +34,7 @@ const StyledList = styled.li`
   display: flex;
   align-items: center;
   width: 50rem;
-  margin: 0rem auto;
+  margin: 2rem auto;
   border: 0.1rem solid rgba(0, 0, 0, 0.233);
   padding: 1rem;
   justify-content: space-between;
@@ -59,4 +57,9 @@ const StyledListNote = styled.p`
   text-align: left;
 `
 
+const StyledButton = styled.button`
+border: none;
+background: none;
+`
+  
 export default List;

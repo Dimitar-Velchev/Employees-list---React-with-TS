@@ -4,18 +4,21 @@ import styled from "styled-components";
 import { BsList } from "react-icons/bs";
 
 import logo from "../assets/icon-employee-5.jpg";
+import { Link } from "react-router-dom";
 
 const Navigation: FC = () => {
   return (
     <Header bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">
+        <Link to="/">
           <Image src={logo} height={45} />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">List</Nav.Link>
+            <Nav.Link as={Link} to="/catalog">
+              Recipes Catalog
+            </Nav.Link>
             <Nav.Link href="#link">Link</Nav.Link>
           </Nav>
         </Navbar.Collapse>

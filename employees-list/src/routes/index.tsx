@@ -1,16 +1,15 @@
-import { FC, useEffect } from 'react';
-import { Router as RRouter } from 'react-router-dom';
-import Routes from './Routes';
-import { createBrowserHistory } from 'history';
+import { FC, useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
+import Pages from "../pages/Pages";
+import Routes from "./Routes";
 
 const Router: FC = () => {
-  const history = createBrowserHistory();
-
-    return (
-        <RRouter history={history}>
-          <Routes />
-        </RRouter>
-      );
-}
+  return (
+    <BrowserRouter>
+      <Pages />
+      <Routes />
+    </BrowserRouter>
+  );
+};
 
 export default Router;

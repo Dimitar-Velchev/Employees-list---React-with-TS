@@ -1,25 +1,12 @@
-import React, { useState } from "react";
-import "./App.css";
-
-import Navigation from "./components/Navigation";
-import Router from "../src/routes"
-import styled from "styled-components";
-
-
+import Router from "../src/routes";
+import Pages from "./pages/Pages";
 
 function App() {
-
   return (
-    
-    <StyledApp>
-      <Navigation />
+    <div>
       <Router />
-    </StyledApp>
+    </div>
   );
 }
-
-const StyledApp = styled.div`
-  text-align: center;
-`;
 
 export default App;

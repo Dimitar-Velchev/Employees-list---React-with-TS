@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import styled from "styled-components";
 
 import AddToList from "../components/AddToList";
 import List from "../components/List";
@@ -24,12 +25,17 @@ const Home = () => {
   };
 
   return (
-    <>
+    <StyledWrapper>
       <h1>Employee List</h1>
       <List employees={employees} onDelete={handleDelete} />
       <AddToList employees={employees} setEmployees={setEmployees} />
-    </>
+    </StyledWrapper>
   );
 };
+
+const StyledWrapper = styled.div`
+  text-align: center;
+  margin: 4rem;
+`
 
 export default Home;
