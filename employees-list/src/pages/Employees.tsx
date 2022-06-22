@@ -5,7 +5,7 @@ import AddToList from "../components/AddToList";
 import List from "../components/List";
 import { IState } from "../types";
 
-const Home = () => {
+const Employees: FC = () => {
   const [employees, setEmployees] = useState<IState["employees"]>([
     {
       url: "https://pngimg.com/uploads/face/face_PNG5645.png",
@@ -38,4 +38,4 @@ const StyledWrapper = styled.div`
   margin: 4rem;
 `
 
-export default Home;
+export default Employees;

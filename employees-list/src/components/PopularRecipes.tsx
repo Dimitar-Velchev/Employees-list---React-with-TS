@@ -12,7 +12,7 @@ const PopularRecipes = (): JSX.Element => {
   }, []);
 
   const mainURL =
-    "https://api.spoonacular.com/recipes/complexSearch?apiKey=b5c49b3a33f94adba1c034f7388c86ce";
+    "https://api.spoonacular.com/recipes/complexSearch?apiKey=c6036e3205044e70ba962b6e578dd81d";
 
   const getPopularRecipes = async () => {
     const api = await fetch(mainURL);

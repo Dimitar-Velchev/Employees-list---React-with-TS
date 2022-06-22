@@ -11,13 +11,19 @@ const FrenchRecipes = (): JSX.Element => {
     getFrenchRecipes();
   }, []);
 
-  const mainURL =
-    "https://api.spoonacular.com/recipes/complexSearch?apiKey=b5c49b3a33f94adba1c034f7388c86ce&cuisine=french";
+  const frenchURL =
+    "https://api.spoonacular.com/recipes/complexSearch?apiKey=c6036e3205044e70ba962b6e578dd81d&cuisine=french";
 
   const getFrenchRecipes = async () => {
-    const api = await fetch(mainURL);
-    const data = await api.json();
-    setFrench(data.results);
+    const cached = localStorage.getItem("french-recipes");
+    if (cached) {
+      setFrench(JSON.parse(cached));
+    } else {
+      const api = await fetch(frenchURL);
+      const data = await api.json();
+      setFrench(data.results);
+      localStorage.setItem("french-recipes", JSON.stringify(data.results));
+    }
   };
 
   return (
@@ -35,7 +41,7 @@ const FrenchRecipes = (): JSX.Element => {
       >
         {french.map((recipe) => {
           return (
-            <SplideSlide key={recipe.id} >
+            <SplideSlide key={recipe.id}>
               <RecipeCard recipe={recipe} />
             </SplideSlide>
           );
