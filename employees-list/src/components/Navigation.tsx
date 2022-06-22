@@ -34,6 +34,7 @@ const Header = styled(Navbar)`
   padding: 0.5rem 2rem;
   display: flex;
   align-items: stretch;
+  margin-bottom: 5rem;
 `;
 
 const Hamburger = styled.button`

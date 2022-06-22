@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import '@splidejs/react-splide/css';
 import { IPopular } from "../types";
 
 const PopularRecipes = (): JSX.Element => {
@@ -20,9 +22,23 @@ const PopularRecipes = (): JSX.Element => {
 
   return (
     <>
-      {popular.map((recipe) => {
-       return <RecipeCard recipe={recipe} key={recipe.id} />;
-      })}
+      <h3>Popular Recipes</h3>
+      <Splide options={ {
+        rewind: true,
+        gap   : '2rem',
+        perPage: 4,
+        type   : 'loop',
+        perMove: 1,
+        pagination: false,
+      } }>
+        {popular.map((recipe) => {
+          return (
+            <SplideSlide>
+              <RecipeCard recipe={recipe} key={recipe.id} />
+            </SplideSlide>
+          );
+        })}
+      </Splide>
     </>
   );
 };
