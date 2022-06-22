@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import '@splidejs/react-splide/css';
-import { IPopular } from "../types";
+import "@splidejs/react-splide/css";
+import { IRecipes } from "../types";
 
 const FrenchRecipes = (): JSX.Element => {
-  const [french, setFrench] = useState<IPopular["popular"]>([]);
+  const [french, setFrench] = useState<IRecipes["recipes"]>([]);
 
   useEffect(() => {
     getFrenchRecipes();
@@ -23,18 +23,20 @@ const FrenchRecipes = (): JSX.Element => {
   return (
     <>
       <h3>French Recipes</h3>
-      <Splide options={ {
-        rewind: true,
-        gap   : '2rem',
-        perPage: 4,
-        type   : 'loop',
-        perMove: 1,
-        pagination: false,
-      } }>
+      <Splide
+        options={{
+          rewind: true,
+          gap: "2rem",
+          perPage: 4,
+          type: "loop",
+          perMove: 1,
+          pagination: false,
+        }}
+      >
         {french.map((recipe) => {
           return (
-            <SplideSlide>
-              <RecipeCard recipe={recipe} key={recipe.id} />
+            <SplideSlide key={recipe.id} >
+              <RecipeCard recipe={recipe} />
             </SplideSlide>
           );
         })}

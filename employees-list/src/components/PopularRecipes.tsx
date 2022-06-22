@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import '@splidejs/react-splide/css';
-import { IPopular } from "../types";
+import "@splidejs/react-splide/css";
+import { IRecipes } from "../types";
 
 const PopularRecipes = (): JSX.Element => {
-  const [popular, setPopular] = useState<IPopular["popular"]>([]);
+  const [popular, setPopular] = useState<IRecipes["recipes"]>([]);
 
   useEffect(() => {
     getPopularRecipes();
@@ -23,18 +23,20 @@ const PopularRecipes = (): JSX.Element => {
   return (
     <>
       <h3>Popular Recipes</h3>
-      <Splide options={ {
-        rewind: true,
-        gap   : '2rem',
-        perPage: 4,
-        type   : 'loop',
-        perMove: 1,
-        pagination: false,
-      } }>
+      <Splide
+        options={{
+          rewind: true,
+          gap: "2rem",
+          perPage: 4,
+          type: "loop",
+          perMove: 1,
+          pagination: false,
+        }}
+      >
         {popular.map((recipe) => {
           return (
-            <SplideSlide>
-              <RecipeCard recipe={recipe} key={recipe.id} />
+            <SplideSlide key={recipe.id}>
+              <RecipeCard recipe={recipe}  />
             </SplideSlide>
           );
         })}
