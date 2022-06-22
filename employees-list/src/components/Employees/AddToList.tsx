@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import styled from "styled-components";
 
-import {IState as Props} from '../types';
+import {IState as Props} from '../../types';
 
 
 interface IProps {

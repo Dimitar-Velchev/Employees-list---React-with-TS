@@ -1,8 +1,8 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
 
-import AddToList from "../components/AddToList";
-import List from "../components/List";
+import AddToList from "../components/Employees/AddToList";
+import List from "../components/Employees/List";
 import { IState } from "../types";
 
 const Employees: FC = () => {

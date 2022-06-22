@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
-import {IState} from '../types';
+import {IState} from '../../types';
 import {MdDeleteForever} from "react-icons/md"
 
 interface IProps extends IState  {

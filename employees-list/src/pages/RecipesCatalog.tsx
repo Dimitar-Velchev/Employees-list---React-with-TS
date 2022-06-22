@@ -1,6 +1,6 @@
 //import { FC } from 'react'
-import PopularRecipes from '../components/PopularRecipes'
-import FrenchRecipes from '../components/FrenchRecipes'
+import PopularRecipes from '../components/Recipes/PopularRecipes'
+import FrenchRecipes from '../components/Recipes/FrenchRecipes'
 
 const RecipesCatalog = () => {
   return (

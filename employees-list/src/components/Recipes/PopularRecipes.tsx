@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import RecipeCard from "./RecipeCard";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-import { IRecipes } from "../types";
+import { IRecipes } from "../../types";
 
 const PopularRecipes = (): JSX.Element => {
   const [popular, setPopular] = useState<IRecipes["recipes"]>([]);

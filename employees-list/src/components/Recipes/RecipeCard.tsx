@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Card } from "react-bootstrap";
-import { IRecipe } from "../types";
+import { IRecipe } from "../../types";
 
 const RecipeCard: FC<IRecipe> = ({ recipe }) => {
   return (

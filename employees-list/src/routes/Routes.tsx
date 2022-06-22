@@ -14,7 +14,7 @@ const Routes: FC = () => {
   return (
     <Switch>
       <Route path="/" exact component={RecipesCatalog}></Route>
-      <Route path="/catalog" component={Employees}></Route>
+      <Route path="/employees" component={Employees}></Route>
       <Route path="*" component={NotFound}></Route>
     </Switch>
   );
